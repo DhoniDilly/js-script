@@ -1,0 +1,72 @@
+ * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+ }
+ body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #8cccff;
+ }
+ .box {
+    width: 500px;
+    position: relative;
+ }
+ .box .inout-box {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+ }
+ .box .inout-box input {
+    position: relative;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 1rem 1rem;
+ }
+ .box .inout-box #Toggle {
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    width: 34px !important;
+    height: 34px ;
+    background-color: rgba(25, 25, 25, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+ }
+ .validation {
+    background-color: #aad1f1;
+    padding: 15px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+ }
+ .validation ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+ }
+ .validation ul li {
+    list-style: none;
+    position: relative;
+    font-size: 1.85rem;
+    transition: all 0.5s;
+    color: rgb(11, 11, 11);
+ }
+ .validation ul li i {
+    margin-right: 20px;
+    font-size: 1.30rem;
+ }
+ .validation ul li.valid {
+    color: rgba(232, 71, 8, 0.5);
+ }

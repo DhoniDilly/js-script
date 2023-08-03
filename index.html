@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Password Validation check</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    
+    <div class="box">
+        <div class="inout-box">
+            <input type="password" id="pswrd" placeholder="Password" onkeyup="CheckPassword(this.value)">
+            <span id="Toggle"><i class="fa-solid fa-eye"></i></span>
+        </div>
+        <div class="validation">
+            <ul>
+                <li id="lower"><i class="fa-sharp fa-regular fa-circle-check"></i>At least one lowercase Character</li>
+                <li id="upper"><i class="fa-sharp fa-regular fa-circle-check"></i>At least one Uppercase Character</li>
+                <li id="numer"><i class="fa-sharp fa-regular fa-circle-check"></i>At least one numer</li>
+                <li id="specail"><i class="fa-sharp fa-regular fa-circle-check"></i>At least one specail Character</li>
+                <li id="length"><i class="fa-sharp fa-regular fa-circle-check"></i>At least 8 Character</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let pswrd = document.getElementById('pswrd');
+        let toggle = document.getElementById('Toggle');
+
+        let leowercas = document.getElementById('lower');
+        let uppercase = document.getElementById('upper');
+        let numers = document.getElementById('numer');
+        let specialcharector = document.getElementById('specail');
+        let lenths = document.getElementById('length');
+
+
+        function CheckPassword(data){
+            const lower = new RegExp('(?=.*[a-z])');
+            const upper = new RegExp('(?=.*[A-Z])');
+            const numer = new RegExp('(?=.*[0-9])');
+            const specail = new RegExp('(?=.*[!@#$%^&*/])');
+            const length = new RegExp('(?=.{8,})');
+
+            if(lower.test(data)){
+                leowercas.classList.add('valid');
+            }else {
+                leowercas.classList.remove('valid');
+            }
+
+            if(upper.test(data)){
+                uppercase.classList.add('valid');
+            }else {
+                uppercase.classList.remove('valid');
+            }
+
+
+            if(numer.test(data)){
+                numers.classList.add('valid');
+            }else {
+                numers.classList.remove('valid');
+            }
+
+            if(specail.test(data)){
+                specialcharector.classList.add('valid');
+            }else {
+                specialcharector.classList.remove('valid');
+            }
+
+            if(length.test(data)){
+                lenths.classList.add('valid');
+            }else {
+                lenths.classList.remove('valid');
+            }
+        }
+
+        //show hide password
+        toggle.onclick = function() {
+            if (pswrd.type === 'password') {
+                pswrd.setAttribute('type','text');
+                Toggle.classList.add('hide');
+            } else {
+                pswrd.setAttribute('type','password');
+                Toggle.classList.remove('hide');
+            }
+        }
+    </script>
+</body>
+</html>
